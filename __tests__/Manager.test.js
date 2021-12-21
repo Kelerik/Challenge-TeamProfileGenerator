@@ -1,6 +1,6 @@
 const Manager = require("../lib/Manager.js");
 
-describe("create an Employee object", () => {
+describe("create a Manager object", () => {
    const [arg1, arg2, arg3, arg4] = [
       "Bob",
       "123",

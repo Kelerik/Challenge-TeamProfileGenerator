@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer.js");
 
-describe("create an Employee object", () => {
+describe("create an Engineer object", () => {
    const [arg1, arg2, arg3, arg4] = ["Bob", "123", "ex@exam.com", "Github"];
    const engineer = new Engineer(arg1, arg2, arg3, arg4);
    it("should be a string", () => {
