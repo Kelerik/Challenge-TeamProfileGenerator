@@ -2,6 +2,11 @@ const fs = require("fs");
 
 const writeHtml = (fileContent) => {
    return new Promise((resolve, reject) => {
+      // create folder if doesn't exist
+      if (!fs.existsSync("./dist/")) {
+         fs.mkdirSync("./dist/", { recursive: true });
+      }
+      // write file
       fs.writeFile("./dist/index.html", fileContent, (err) => {
          // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
          if (err) {
@@ -11,10 +16,7 @@ const writeHtml = (fileContent) => {
          }
 
          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-         resolve({
-            ok: true,
-            message: "File created!",
-         });
+         resolve("HTML file successfully created!");
       });
    });
 };

@@ -81,7 +81,12 @@ const employee = (employeeArray) => {
       </div>
       <ul class="list-group list-group-flush border m-3">
          <li class="list-group-item">ID: ${employeeClass.getId()}</li>
-         <li class="list-group-item">Email: ${employeeClass.getEmail()}</li>
+         <li class="list-group-item">
+            Email:
+            <a href="mailto:${employeeClass.getEmail()}" target="_blank"
+               >${employeeClass.getEmail()}</a
+            >
+         </li>
          <li class="list-group-item">Office Number: ${
             employeeClass.officeNumber
          }</li>
@@ -102,8 +107,18 @@ const employee = (employeeArray) => {
       </div>
       <ul class="list-group list-group-flush border m-3">
          <li class="list-group-item">ID: ${employeeClass.getId()}</li>
-         <li class="list-group-item">Email: ${employeeClass.getEmail()}</li>
-         <li class="list-group-item">Github: ${employeeClass.getGithub()}</li>
+         <li class="list-group-item">
+            Email:
+            <a href="mailto:${employeeClass.getEmail()}" target="_blank"
+               >${employeeClass.getEmail()}</a
+            >
+         </li>
+         <li class="list-group-item">
+            Github:
+            <a href="https://github.com/${employeeClass.getGithub()}" target="_blank"
+               >${employeeClass.getGithub()}</a
+            >
+         </li>
       </ul>
    </div>
 </div>
@@ -121,7 +136,12 @@ const employee = (employeeArray) => {
       </div>
       <ul class="list-group list-group-flush border m-3">
          <li class="list-group-item">ID: ${employeeClass.getId()}</li>
-         <li class="list-group-item">Email: ${employeeClass.getEmail()}</li>
+         <li class="list-group-item">
+            Email:
+            <a href="mailto:${employeeClass.getEmail()}" target="_blank"
+               >${employeeClass.getEmail()}</a
+            >
+         </li>
          <li class="list-group-item">School: ${employeeClass.getSchool()}</li>
       </ul>
    </div>

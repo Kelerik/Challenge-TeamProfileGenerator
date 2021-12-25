@@ -137,6 +137,8 @@ const intern = (teamData) => {
 
 // prompt menu options
 const menu = (teamData) => {
+   // spacer line to aid with readability
+   console.log("");
    return inquirer
       .prompt([
          {
@@ -147,13 +149,13 @@ const menu = (teamData) => {
          },
       ])
       .then((answers) => {
+         console.log("");
          switch (answers.option) {
             case "Add Engineer":
                return engineer(teamData);
             case "Add Intern":
                return intern(teamData);
             default:
-               console.log(teamData);
                return teamData;
          }
       });
