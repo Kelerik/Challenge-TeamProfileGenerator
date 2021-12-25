@@ -35,25 +35,25 @@ const engineer = () => {
    return inquirer.prompt([
       {
          type: "input",
-         name: "engineerName",
+         name: "name",
          message: "Please enter the engineer's name",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "engineerId",
+         name: "id",
          message: "Please enter the engineer's employee ID",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "engineerEmail",
+         name: "email",
          message: "Please enter the engineer's email address",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "engineerGithub",
+         name: "github",
          message: "Please enter the engineer's Github username",
          validate: (promptInput) => validateInput(promptInput),
       },
@@ -65,25 +65,25 @@ const intern = () => {
    return inquirer.prompt([
       {
          type: "input",
-         name: "internName",
+         name: "name",
          message: "Please enter the intern's name",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "internId",
+         name: "id",
          message: "Please enter the intern's employee ID",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "internEmail",
+         name: "email",
          message: "Please enter the intern's email address",
          validate: (promptInput) => validateInput(promptInput),
       },
       {
          type: "input",
-         name: "internSchool",
+         name: "school",
          message: "Please enter the name of the intern's school",
          validate: (promptInput) => validateInput(promptInput),
       },

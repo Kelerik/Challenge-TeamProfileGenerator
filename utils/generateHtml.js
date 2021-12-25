@@ -1,4 +1,4 @@
-const finalHTML = (manager, engineer, intern) => {
+const final = (manager, engineer, intern) => {
    return `
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,7 @@ const finalHTML = (manager, engineer, intern) => {
 `;
 };
 
-const employeeHTML = (employeeClass) => {
+const employee = (employeeClass) => {
    switch (employeeClass.getRole()) {
       case "Manager":
          return `
@@ -85,8 +85,46 @@ const employeeHTML = (employeeClass) => {
 </div>
 `;
 
+      case "Engineer":
+         return `
+<div class="col-6">
+   <div class="card mt-4 shadow">
+      <div class="card-body bg-success bg-gradient text-white">
+         <h5 class="card-title">${employeeClass.getName()}</h5>
+         <p class="card-text">
+            <i class="fas fa-wrench"></i> Engineer
+         </p>
+      </div>
+      <ul class="list-group list-group-flush border m-3">
+         <li class="list-group-item">ID: ${employeeClass.getId()}</li>
+         <li class="list-group-item">Email: ${employeeClass.getEmail()}</li>
+         <li class="list-group-item">Github: ${employeeClass.getGithub()}</li>
+      </ul>
+   </div>
+</div>
+`;
+
+      case "Intern":
+         return `
+<div class="col-6">
+   <div class="card mt-4 shadow">
+      <div class="card-body bg-info bg-gradient text-white">
+         <h5 class="card-title">${employeeClass.getName()}</h5>
+         <p class="card-text">
+            <i class="fas fa-graduation-cap"></i> Intern
+         </p>
+      </div>
+      <ul class="list-group list-group-flush border m-3">
+         <li class="list-group-item">ID: ${employeeClass.getId()}</li>
+         <li class="list-group-item">Email: ${employeeClass.getEmail()}</li>
+         <li class="list-group-item">School: ${employeeClass.getSchool()}</li>
+      </ul>
+   </div>
+</div>
+`;
+
       default:
          break;
    }
 };
-module.exports = { employeeHTML };
+module.exports = { final, employee };
