@@ -1,4 +1,5 @@
-const final = (manager, engineer, intern) => {
+// overall html page
+const final = (managerHtml, engineerHtml, internHtml) => {
    return `
 <!DOCTYPE html>
 <html lang="en">
@@ -33,17 +34,17 @@ const final = (manager, engineer, intern) => {
       <main class="container">
          <!-- manager -->
          <div class="row justify-content-center">
-            ${manager}
+            ${managerHtml}
          </div>
 
          <!-- engineers -->
          <div class="row justify-content-center">
-            ${engineer}
+            ${engineerHtml}
          </div>
 
          <!-- interns -->
          <div class="row justify-content-center">
-            ${intern}
+            ${internHtml}
          </div>
       </main>
 
@@ -62,10 +63,14 @@ const final = (manager, engineer, intern) => {
 `;
 };
 
-const employee = (employeeClass) => {
-   switch (employeeClass.getRole()) {
-      case "Manager":
-         return `
+const employee = (employeeArray) => {
+   return (
+      employeeArray
+         // iterate through each array element and return an html block for each
+         .map((employeeClass) => {
+            switch (employeeClass.getRole()) {
+               case "Manager":
+                  return `
 <div class="col-6">
    <div class="card mt-4 shadow">
       <div class="card-body bg-primary bg-gradient text-white">
@@ -85,9 +90,9 @@ const employee = (employeeClass) => {
 </div>
 `;
 
-      case "Engineer":
-         return `
-<div class="col-6">
+               case "Engineer":
+                  return `
+<div class="col-4">
    <div class="card mt-4 shadow">
       <div class="card-body bg-success bg-gradient text-white">
          <h5 class="card-title">${employeeClass.getName()}</h5>
@@ -104,9 +109,9 @@ const employee = (employeeClass) => {
 </div>
 `;
 
-      case "Intern":
-         return `
-<div class="col-6">
+               case "Intern":
+                  return `
+<div class="col-4">
    <div class="card mt-4 shadow">
       <div class="card-body bg-info bg-gradient text-white">
          <h5 class="card-title">${employeeClass.getName()}</h5>
@@ -123,8 +128,13 @@ const employee = (employeeClass) => {
 </div>
 `;
 
-      default:
-         break;
-   }
+               default:
+                  break;
+            }
+         })
+         // * concat into a single string before returning
+         .join("")
+   );
 };
+
 module.exports = { final, employee };
